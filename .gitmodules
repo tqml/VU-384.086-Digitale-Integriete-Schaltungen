@@ -1,3 +1,6 @@
 [submodule "cld"]
 	path = cld
 	url = https://github.com/Haini/VU-384.086-Digitale-Integriete-Schaltungen-cld.git
+[submodule "conf"]
+	path = conf
+	url = https://github.com/Painkilla/conf.git
