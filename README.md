@@ -12,8 +12,8 @@ Der Sinn hinter den Git Repos liegt darin, dass mit nur einem Befehl (git clone 
 ## Wie bekomme ich neue Inhalte?
 Mit dem Befehl (git pull upstream master) erhältst du alle neuen Inhalte, welches es für die betreffende Lehrveranstaltung frei zugänglich gibt. Du musst dazu nicht mehr das Forum nach neuen Inhalten durchsuchen und sie mit deinen Inhalten vergleichen.
 
-## Ich hab eine Frage zu einem Rechenbeispiel, Theorie, Mündliche Frage, usw.
-Erstelle für jede Frage EIN Issue. In den Titel schreibst du hinein um welches Beispiel oder Theoriefrage, usw. es sich handelt. Ist deine Frage beantwortet, wird dein Issue geschlossen und die Lösung deiner Frage wird in das Repo eingepflegt. Hast du eine Frage zu einem Beispiel, dass bereits beantwortet ist/gelöst ist, kannst du das Issue wieder öffnen. Mit dieser Vorgehensweise wollen wir elend lange Threads vermeiden, wo komplett chaotisch über mehrere Posts hinweg verschiedenste Probleme/Fragen behandelt werden und auch ein nachträgliches Lesen sehr aufwendig ist.
+## Wo finde ich die Lehrnunterlagen als pdf?
+Die opn Lehrnunterlagen werden zu jedem Quartalsanfang kompiliert und als Release auf GitHub veröffentlicht. Die cld Lehrnunterlagen werden für dich persönlich kompiliert und an deine e-Mail adresse geschickt.
 
 ## Was ist der Unterschied zwischen dem opn (open) und cld (closed) Ordner?
 Der opn (open) Ordner ist für jeden einsehbar und unterliegt der GNU GPLv3. Jeder kann hier stöbern und sich ansehen, was das OMN zur Verfügung stellt und neue Inhalte dazu beitragen. Der cld (closed) Ordner ist nur für OMN Mitglieder zugänglich, welche sich am OMN beteiligen.
@@ -24,13 +24,13 @@ Das OMN soll wachsen und dazu benötigt es die Unterstützung von Studenten. Um 
 ## Wie werde ich Mitglied?
 Das ist ganz einfach. Schau in das TODO File und suche dir eine Aufgabe aus, welche noch nicht erledigt wurde. Wenn du zwei Punkte gesammelt hast, erstelle ein Issue, indem du kurz schreibst was du gemacht hast um Zugriff auf den closed Bereich zu erhalten.
 
-## Wie kann ich etwas beitragen?
+# Wie kann ich etwas beitragen?
 Es gibt hier zwei Möglichkeiten.
 
-### Direkt mittels Git und GitHub
+## Direkt mittels Git und GitHub
 Wenn du dich mit Git, GitHub und LaTeX auskennst, wähle bitte diesen Weg.
 
-#### Einmalige Initialisierung
+### Einmalige Initialisierung
 Hier wird beschrieben, welche Schritte einmalig durchführen musst, um das Repo auf deinen PC zu bekommen.
 
 1. Registriere und melde dich bei GitHub an.
@@ -57,7 +57,7 @@ Hier wird beschrieben, welche Schritte einmalig durchführen musst, um das Repo 
 1. Füge das UPSTREAM Repo mit folgendem Befehl hinzu.
 
     ```
-    $ git remote add -t master UPSTREAM_URL upstream
+    $ git remote add -t master upstream UPSTREAM_URL
     ```
 1. Überprüfe deine remote Repos. Es sollten hier 4 Zeilen erscheinen
 
@@ -69,7 +69,7 @@ Hier wird beschrieben, welche Schritte einmalig durchführen musst, um das Repo 
     upstream UPSTREAM_URL (push)
     ```
     
-#### Wiederkehrend
+### Wiederkehrend
 Hier wird beschrieben, welche Schritte notwendig sind damit du etwas beitragen kannst. Füre diese Schritte jedes mal in dieser Reinfolge aus.
 
 1. Hole dir die neuesten Inhalte vom UPSTREAM Repo.
@@ -143,9 +143,9 @@ Hier wird beschrieben, welche Schritte notwendig sind damit du etwas beitragen k
     ```
     $ git push origin master
     ```
-1. Geh auf die GitHub Seite der Lehrveranstaltung und erstelle einen Pull-Request, damit deine Änderungen in das UPSTREAM Repo übernommen werden und wieder für alle zur Verfügung steht.
+1. Geh auf die GitHub Seite der UPSTREAM Lehrveranstaltung und erstelle einen Pull-Request, damit deine Änderungen in das UPSTREAM Repo übernommen werden und wieder für alle zur Verfügung steht.
 
-### Indirekt über ein Issue
+## Indirekt über ein Issue
 Wenn du von Git und GitHub keine Ahnung hast, kannst du dennoch etwas beitragen. Du kannst alle Aufgaben erledigen, welche als text editiert werden können. Dazu muss in der TODO Liste stehen, dass diese Aufgabe auch als Issue durchgeführt werden kann. Beachte bitte, dass du für jede Aufgabe, welche du über ein Issue löst um EINEN Punkt weniger erhältst, als wenn du direkt mit Git arbeitest.
 
 1. Erstell eine Liste an Änderungen/ Korrekturen/ Verbesserungen
@@ -154,16 +154,28 @@ Wenn du von Git und GitHub keine Ahnung hast, kannst du dennoch etwas beitragen.
     ```
     $ make test
     ```
-    Im out Ordner wird ein test.pdf erstellt.
+    Im /conf/out Ordner wird ein test.pdf erstellt.
 1. Erstelle ein Issue und kopiere dort die Liste hinein
 
 ## Ich bin für den closed Bereich freigeschalten. Wie bekomme ich die Inhalte?
 
 1. Geh in den Ordner in welchem sich die Lehrveranstaltung befindet für die du freigeschaltet wurdest.
-1. Öffne die git konsole mit rechtsklich Git Bash here
-1. 
+1. Öffne die git konsole mit rechtsklick Git Bash here
+1. führe folgende Befehle aus:
 
+    ```
+    $ git submodule init cld
+    $ git submodule update cld
+    ```
+1. Lies das README und TODO im closed Bereich. Es unterscheidet sich von den opn Dokumenten.
 
+## Wie kann ich die Lernunterlagen selber kompilieren?
+Geh dazu in den Hauptordner des Repo und führe den nachfolgenden Befehl aus. Kompilieren geht derzeit nur auf Linux.
+
+```
+$ make all
+```
+    
 ## Muss ich bei jeder Lehrveranstaltung etwas beitragen um für den closed Bereich freigeschalten zu werden?
 NEIN. Das Ziel ist, dass du bei der ersten Lehrveranstaltung eine Aufgabe im open Bereich erfüllst, und dann beliebig viele Aufgaben im closed Bereich. Je mehr Aufgaben du im closed Bereich erfüllst, desto mehr closed Inhalte bekommst du von anderen Lehrveranstaltung ohne dafür auch nur irgendetwas machen zu müssen.
 
@@ -173,5 +185,8 @@ NEIN, wenn es dir nicht Wert ist etwas Zeit für gute Lernunterlagen zu opfern, 
 ## Ich möchte gerne etwas im closed Bereich beitragen, bin aber dafür leider noch nicht freigeschaltet.
 Netter Versuch. Zuerst im open Bereich, dann im closed. 
 
-## Darf ich die Lernunterlagen mit Freunden teilen oder Veröffentlichen?NEIN, die Lehrunterlagen sind nur fuer dich persoenlich gedacht. Damit hilfst du uns, den Anreiz von neuen Beitraegen hoch zu halten - das hilft letztendlich allen. */
+## Darf ich die Lernunterlagen mit Freunden teilen oder Veröffentlichen?
 NEIN, die Lehrunterlagen sind nur für dich persönlich gedacht. Damit hilfst du uns, den Anreiz von neuen Beiträgen hoch zu halten und das hilft letztendlich allen.
+
+## Ich hab eine Frage zu einem Rechenbeispiel, Theorie, Mündliche Frage, usw.
+Erstelle für jede Frage EIN Issue. In den Titel schreibst du hinein um welches Beispiel oder Theoriefrage, usw. es sich handelt. Ist deine Frage beantwortet, wird dein Issue geschlossen und die Lösung deiner Frage wird in das Repo eingepflegt. Hast du eine Frage zu einem Beispiel, dass bereits beantwortet ist/gelöst ist, kannst du das Issue wieder öffnen. Mit dieser Vorgehensweise wollen wir elend lange Threads vermeiden, wo komplett chaotisch über mehrere Posts hinweg verschiedenste Probleme/Fragen behandelt werden und auch ein nachträgliches Lesen sehr aufwendig ist.

@@ -18,12 +18,12 @@ Hilf anderen Studenten mit Fragen zu Beispielen, Lösungen, Theorie, usw. BEACHT
 Arbeite die Lösungen/Antworten von Fragen, welche in den Issues gestellt wurden, in das Repo ein, sodass die Lehrunterlagen verständlicher werden.
 
 ## Daten Einstellen (1 Punkt)
-In dieser Sektion wird beschrieben, wie du nur durch herunterladen von Angaben oder Skripten und dem richtigen ablegen im Repo Punkte sammeln kannst. Ist eine Datei bereits vorhanden, kann sie nicht erneut eingestellt werden. BEACHTE: Die Daten müssen frei Zugänglich sein. Bücher und Skripten welche nicht frei zugänglich sind, kommen in den closed Bereich.
+In dieser Sektion wird beschrieben, wie du nur durch herunterladen von Angaben oder Skripten und dem richtigen ablegen im Repo Punkte sammeln kannst. Ist eine Datei bereits vorhanden, kann sie nicht erneut eingestellt werden. BEACHTE: Die Daten müssen frei Zugänglich sein. Bücher und Skripten welche nicht frei zugänglich sind, kommen in den closed Bereich. Frage dazu auch vorher den Professor ob er damit einverstanden ist.
 
 Diese Aufgaben kannst du nur direkt mit Git und GitHub lösen.
 
 ### Skriptum
-Lade das aktuelle vollständige Skript (nicht Kapitelweise) herunter und stelle es in /opn/skp/txt/date/Jahr/ hinein.
+Lade das aktuelle vollständige Skript (nicht Kapitelweise) herunter und stelle es in /opn/skp/txt/date/Jahr/ hinein. 
 
 ### Foliensatz
 Lade den aktuellen Satz an Präsentationsfolien herunter und stelle Ihn in /opn/skp/ppt/date/Jahr/ hinein.
@@ -60,7 +60,8 @@ Stelle das .pdf in /opn/exm/bsp/date/JahrMonatTag/JahrMonatTag.pdf hinein.
 ### Einsicht bei Theoriebeispielen
 Stelle das .pdf in /opn/exm/thr/date/JahrMonatTag/JahrMonatTag.pdf hinein.
 
-
+### Einsicht bei Multiple Choice
+Multiple Choice Fragen dürfen bei der Einsicht nicht eingescannt werden. Merke dir so gut du kannst die Fragen und schreib sie auf. Das .pdf kommt dann in den closed Bereich.
 
 ### Einsicht bei gemischten Prüfungen
 Stelle das .pdf entweder als ein ganzes in /opn/exm/misc/date/JahrMonatTag/JahrMonatTag.pdf hinein, oder teil es entsprechend der Fragegruppen auf.
@@ -101,23 +102,3 @@ Tippe eine Frage zu einer gemischten Prüfung aus der Datei /opn/exm/misc/date/J
 Such dir eine beliebige Frage oder Angabe aus. Ist die Frage bereits abgetippt, drucke nur die Angabe als einzelne Seite aus und rechne das Beispiel darunter. Ist die Frage noch nicht abgetippt, drucke die Rohversion des .pdf aus und löse das Beispiel dort. Beachte bitte auch hier die vorgaben hinsichtlich Papierqualität und Wahl der Stiftfarbe. Scanne deine Lösung bitte ein und stell sie als .pdf in den gleichen Ordner hinein wo sich die Angabe befindet. Verwende bitte als Dateinamen den gleichen wie die Angabe und füge ein -lsg hinten hinzu, um es als Lösung zu markieren. Endet ein Ordnername auf "-done" ist das Beispiel bereits gelöst und befindet sich im closed Bereich.
 
 Solltest du dich mit Git oder GitHub nicht auskennen, kannst du die Inhalte auch als Issue erstellen und die Inhalte einfach hinein kopieren. Du erhälst jedoch um einen Punkt weniger.
-
-# Aufgaben im closed Bereich
-Die hier beschriebenen Aufgaben können nur im closed Bereich ausgeführt werden.
-
-## Issues bearbeiten
-Gleiche Aufgaben wie im open Bereich, jedoch im closed Bereich.
-
-## Einsicht bei Multiple Choice
-Stelle das .pdf in /cld/exm/mpc/date/JahrMonatTag/JahrMonatTag.pdf hinein.
-
-## Multiple Choice Prüfungen
-Tippe eine Frage zu einer Multiple Choice Prüfung aus der Datei /cld/exm/mpc/date/JahrMonatTag/JahrMonatTag.pdf in LaTeX ab und stelle die Datei in /cld/exm/mpc/date/JahrMonatTag/Fragenummer/Fragenummer.tex hinein.
-
-## Lösung Abtippen (3 Punkte)
-Such die eine beliebige abgetippte und handschriftlich gelöste Frage/Angabe aus. Tippe die Lösung in das LaTeX File (ohne ein Grafik zu erstellen) und kopiere den gesammten Inhalt des Ordners worin sich die Frage befindet in den closed Bereich. Also z.B. von /opn/exm/mdl/date/JahrMonatTag/Fragenummer/ nach /cld/exm/mdl/date/JahrMonatTag/Fragenummer/. Lösch den Inhalt des Beispielordners im open Bereich und ändere den Ordnernamen auf /Fragenummer-done. Dadurch wird verhindert, dass die Frage erneut gelöst wird und sie in dem erzeugten pdf nicht doppelt vorkommt.
-
-## Grafik erstellen (4 Punkte)
-Du bist in der Königsdisziplin angekommen. Erstelle eine Grafik zu einem beliebigen Beispiel mit TikZ in LaTeX.
-
-
