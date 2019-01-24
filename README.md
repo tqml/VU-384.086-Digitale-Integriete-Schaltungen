@@ -35,6 +35,7 @@ Hier wird beschrieben, welche Schritte einmalig durchführen musst, um das Repo 
 
 1. Registriere und melde dich bei GitHub an.
 1. Lade dir Git herunter.  [https://git-scm.com/download/win](https://git-scm.com/download/win)
+1. Installiere Git, aktiviere im Installationsdialog "Git Credential Manager" und "Enable Symbolic Links"
 1. Lade dir einen LaTeX Editor herunter. Empfohlen für Windows nutzer, TeXStudio [https://github.com/texstudio-org/texstudio/releases/download/2.12.14/texstudio-2.12.14-win-qt5.exe](https://github.com/texstudio-org/texstudio/releases/download/2.12.14/texstudio-2.12.14-win-qt5.exe)
 1. Geh in GitHub auf die Lehrveranstaltung, zu der du etwas beitragen möchtest. Diese Git Repo heißt für jede Lehrveranstaltung UPSTREAM
 1. Klick rechts oben auf das Feld "Fork" um einen Abkömmling zu erstellen. GitHub erstellt dir eine Kopie vom UPSTREAM Repo. Deine Kopie heißt jetzt ORIGIN.
@@ -42,10 +43,11 @@ Hier wird beschrieben, welche Schritte einmalig durchführen musst, um das Repo 
 1. Das ist DEINE ORIGIN_URL, kopiere Sie.
 1. Öffne deinen Explorer und erstelle einen Ordner für Uni.
 1. Öffne diesen Ordner und rechtsklicke und klick auf Git Bash here.
-1. Kopiere (Clone) deinen Fork auf deinen lokalen PC. Gib dazu in die Konsole folgende Befehle ohne dem $ Zeichen ein.  Die URL musst du durch deine kopierte URL ersetzen.
+1. Kopiere (Clone) deinen Fork auf deinen lokalen PC. Gib dazu in die Konsole folgende Befehle ohne dem $ Zeichen ein.  Die URL musst du durch deine kopierte ORIGIN_URL ersetzen.
 
     ```
     $ git clone ORIGIN_URL
+    $ cd ./Type-LVA_Nummer-Name-der-LVA
     $ git submodule init conf
     $ git submodule update conf
     ```
@@ -158,14 +160,39 @@ Wenn du von Git und GitHub keine Ahnung hast, kannst du dennoch etwas beitragen.
 1. Erstelle ein Issue und kopiere dort die Liste hinein
 
 ## Ich bin für den closed Bereich freigeschalten. Wie bekomme ich die Inhalte?
+Diesen Punkt BITTE NUR EINMAL ausführen. Damit wird dein closed Repo angelegt und heruntergeladen.
 
-1. Geh in den Ordner in welchem sich die Lehrveranstaltung befindet für die du freigeschaltet wurdest.
+1. Geh in den Hauptordner in welchem sich die Lehrveranstaltung befindet für die du freigeschaltet wurdest.
 1. Öffne die git konsole mit rechtsklick Git Bash here
 1. führe folgende Befehle aus:
 
     ```
     $ git submodule init cld
     $ git submodule update cld
+    ```
+1. Git wird nach dem GitHub username und passwort fragen. Das muss dann hier eingegeben werden.
+1. Füge das UPSTREAM Repo als Link hinzu.
+    Git initialisiert die erste URL immer als origin, unabhängig davon um welches Projekt es sich handelt.
+    Gib dazu folgenden Befehl ein, um die upstream URL zu sehen.
+    
+    ```
+    $ git remote -v
+    origin   UPSTREAM_URL_CLD (fetch)
+    origin   UPSTREAM_URL_CLD (push)
+    ```
+    Kopiere oder tippe diese UPSTREAM_URL_CLD in folgendem Befehl ab.
+    
+    ```
+    $ git remote add -t master upstream UPSTREAM_URL_CLD
+    ```
+1. Wenn du nun dir die remote Repos anzeigen lässt, sollte die UPSTREAM_URL_CLD vier mal vorkommen.
+
+    ```
+    $ git remote -v
+    origin   UPSTREAM_URL_CLD (fetch)
+    origin   UPSTREAM_URL_CLD (push)
+    upstream UPSTREAM_URL_CLD (fetch)
+    upstream UPSTREAM_URL_CLD (push)
     ```
 1. Lies das README und TODO im closed Bereich. Es unterscheidet sich von den opn Dokumenten.
 
