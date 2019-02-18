@@ -38,3 +38,10 @@
 !/**/date/**/*.tex
 !/**/misc/**/*.pdf
 !/**/misc/**/*.tex
+
+
+
+
+# Ignore DS-Store folders (Spotlight index folder on MAC OS X)
+.DS_Store/
+**/.DS_Store
